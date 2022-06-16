@@ -4,6 +4,7 @@ import (
 	"github.com/sttatusx/nashayest/router"
 
 	"log"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -13,5 +14,6 @@ func main() {
 
 	router.SetupRoutes(app)
 
-	log.Fatal(app.Listen(":3000"))
+	port := os.Getenv("PORT")
+	log.Fatal(app.Listen(port))
 }
