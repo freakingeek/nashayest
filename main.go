@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/sttatusx/nashayest/database"
 	"github.com/sttatusx/nashayest/router"
 
 	"log"
@@ -13,6 +14,8 @@ import (
 func main() {
 	app := fiber.New()
 	app.Use(cors.New())
+
+	database.Connect()
 
 	router.SetupRoutes(app)
 
