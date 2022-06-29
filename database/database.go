@@ -10,6 +10,8 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+var Database *gorm.DB
+
 func Connect() *gorm.DB {
 	db, err := gorm.Open(sqlite.Open("api.db"), &gorm.Config{})
 
@@ -23,6 +25,8 @@ func Connect() *gorm.DB {
 
 	log.Println("Running Migrations ...")
 	db.AutoMigrate(&models.Word{})
+
+	Database = db
 
 	return db
 }
