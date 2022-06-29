@@ -12,4 +12,5 @@ func SetupRoutes(app *fiber.App) {
 
 	// Routes
 	api.Get("/", handler.CheckIllegalWords)
+	api.Post("/words", handler.AddNewIllegalWord)
 }
