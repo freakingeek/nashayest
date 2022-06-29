@@ -59,7 +59,7 @@ func GetAllTheIllegalWords(c *fiber.Ctx) error {
 	})
 }
 
-func GetAIllegalWordById(c *fiber.Ctx) error {
+func GetAnIllegalWordById(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
 
 	if err != nil {
@@ -84,7 +84,7 @@ func GetAIllegalWordById(c *fiber.Ctx) error {
 	})
 }
 
-func DeleteAIllegalWordById(c *fiber.Ctx) error {
+func DeleteAnIllegalWordById(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
 
 	if err != nil {
