@@ -45,3 +45,13 @@ func AddNewIllegalWord(c *fiber.Ctx) error {
 		"title": word.Title,
 	})
 }
+
+func GetAllTheIllegalWords(c *fiber.Ctx) error {
+	words := []models.Word{}
+	database.Database.Find(&words)
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"count": len(words),
+		"words": words,
+	})
+}
