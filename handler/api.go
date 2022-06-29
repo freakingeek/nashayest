@@ -84,6 +84,47 @@ func GetAnIllegalWordById(c *fiber.Ctx) error {
 	})
 }
 
+func UpdateAnIllegalWordById(c *fiber.Ctx) error {
+	id, err := c.ParamsInt("id")
+
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "You should provide an id with type of integer",
+		})
+	}
+
+	var word models.Word
+
+	database.Database.Find(&word, "id = ?", id)
+
+	if word.ID == 0 {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Word not found",
+		})
+	}
+
+	type UpdateWord struct {
+		Title string `json:"title"`
+	}
+
+	var updateData UpdateWord
+
+	if err = c.BodyParser(&updateData); err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	word.Title = updateData.Title
+
+	database.Database.Save(&word)
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"id":    word.ID,
+		"title": word.Title,
+	})
+}
+
 func DeleteAnIllegalWordById(c *fiber.Ctx) error {
 	id, err := c.ParamsInt("id")
 

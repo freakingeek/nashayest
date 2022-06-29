@@ -17,5 +17,6 @@ func SetupRoutes(app *fiber.App) {
 	api.Post("/words", handler.AddNewIllegalWord)
 
 	api.Get("/words/:id", handler.GetAnIllegalWordById)
+	api.Put("/words/:id", handler.UpdateAnIllegalWordById)
 	api.Delete("/words/:id", handler.DeleteAnIllegalWordById)
 }
