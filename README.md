@@ -6,7 +6,7 @@ Nashayest is a free and [open API](https://en.wikipedia.org/wiki/Open_API) for d
 
 <br />
 
-# How it's works
+## How it's works
 The Nashayest database contains many illegal words in English and other languages (e.g Persian). All the illegal words found in your text will be provided to you, so you may do whatever you want with them.  
 
 <br />
@@ -15,7 +15,7 @@ The Nashayest database contains many illegal words in English and other language
 
 <br />
 
-# How to use it
+## How to use it
 You can use it with `curl` or any API platform like `Postman`, or simply put it in your own app if you wish to.
 
 ```sh
@@ -35,7 +35,7 @@ If everything goes right you should see something like this.
 
 <br />
 
-# Todos
+## Todos
 
 - [X] Provide a way to add new words
 - [X] Provide a way to update/delete words
@@ -43,5 +43,5 @@ If everything goes right you should see something like this.
 
 <br />
 
-# License
+## License
 The Nashayest project is under [MIT](https://github.com/sttatusx/nashayest/blob/main/LICENSE) license
