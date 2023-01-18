@@ -11,7 +11,7 @@ The Nashayest database contains many illegal words in English and other language
 
 <br />
 
-> You can see the Nashayest illegal words [here](https://nashayest.herokuapp.com/api_v1.0/words)
+> You can see the Nashayest illegal words [here](https://nashayest.onrender.com/api_v1.0/words)
 
 <br />
 
@@ -19,7 +19,7 @@ The Nashayest database contains many illegal words in English and other language
 You can use it with `curl` or any API platform like `Postman`, or simply put it in your own app if you wish to.
 
 ```sh
-$ curl https://nashayest.herokuapp.com/api_v1.0/?text=hello 
+$ curl https://nashayest.onrender.com/api_v1.0/?text=hello 
 ```
 
 <br />
