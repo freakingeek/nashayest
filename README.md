@@ -2,7 +2,7 @@
 
 
 # Nashayest
-Nashayest is a free and [open API](https://en.wikipedia.org/wiki/Open_API) for detecting illegal words in a sentence to ensure that the final sentence is safe for everyone.  
+Nashayest is a free and [Open API](https://en.wikipedia.org/wiki/Open_API) for detecting illegal words in a sentence to ensure that the final sentence is safe for everyone.  
 
 <br />
 
@@ -35,11 +35,11 @@ If everything goes right you should see something like this.
 
 <br />
 
-## Todos
+## Todo
 
 - [X] Provide a way to add new words
 - [X] Provide a way to update/delete words
-- [ ] Use a better database (instead of SQLite)
+- [ ] Use a better algorithm for finding words
 
 <br />
 
