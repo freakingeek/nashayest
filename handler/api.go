@@ -12,18 +12,15 @@ func CheckIllegalWords(c *fiber.Ctx) error {
 	text := c.Query("text")
 	illegalWords := []string{}
 
-	// Get the illegal words from database
-	allTheIllegalWords := []models.Word{}
-	database.Database.Find(&allTheIllegalWords)
-
 	if text != "" {
 		words := strings.Split(text, " ")
 
 		for _, word := range words {
-			for _, illegal := range allTheIllegalWords {
-				if illegal.Title == word {
-					illegalWords = append(illegalWords, word)
-				}
+			illegalWord := models.Word{}
+			database.Database.Find(&illegalWord, "title = ?", word)
+
+			if illegalWord.Title != "" {
+				illegalWords = append(illegalWords, word)
 			}
 		}
 	}
