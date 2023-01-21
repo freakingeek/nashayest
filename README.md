@@ -37,9 +37,9 @@ If everything goes right you should see something like this.
 
 ## Todo
 
-- [X] Provide a way to add new words
-- [X] Provide a way to update/delete words
-- [ ] Use a better algorithm for finding words
+- [X] ~~Provide a way to add new words~~
+- [X] ~~Provide a way to update/delete words~~
+- [X] ~~Use a better algorithm for finding words~~
 
 <br />
 
