@@ -17,7 +17,13 @@ func CheckIllegalWords(c *fiber.Ctx) error {
 
 		for _, word := range words {
 			illegalWord := models.Word{}
-			database.Database.Find(&illegalWord, "title = ?", word)
+			err := database.Database.Find(&illegalWord, "title = ?", word).Error
+
+			if err != nil {
+				return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+					"error": "Somthing bad happend!",
+				})
+			}
 
 			if illegalWord.Title != "" {
 				illegalWords = append(illegalWords, word)
